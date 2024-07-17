@@ -288,7 +288,7 @@ async def datos_piloto(request: PilotoRequest):
     params = [f"%{request.piloto.lower()}%"]
 
     if request.compuesto:
-        query += " AND Compuesto = '%s'"
+        query += " AND Compuesto = %s"
         params.append(request.compuesto)
     
     if request.circuito:
